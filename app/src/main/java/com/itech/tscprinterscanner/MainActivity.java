@@ -1,7 +1,8 @@
 package com.itech.tscprinterscanner;
-import static android.content.ContentValues.TAG;
+// import static android.content.ContentValues.TAG;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.Manifest;
 import android.bluetooth.BluetoothAdapter;
 import android.content.Intent;
 import android.os.Bundle;
@@ -27,6 +28,7 @@ import java.util.Locale;
 import pub.devrel.easypermissions.EasyPermissions;
 
 public class MainActivity extends AppCompatActivity {
+    private static final String TAG = MainActivity.class.getSimpleName();
     private TSCActivity TscDll = new TSCActivity();//BT
     private BarcodeManager mBarcodeManager;
     private ReadListener readListener;
@@ -75,9 +77,14 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    private boolean isBluetoothConnected() {
+        Log.d(TAG, "isBluetoothConnected: always true");
+        return true;
+    }
+
     public static final int RC_LOCATION_PERM = 123;
     private static final String[] LOCATION_PERMS = {
-            Manifest.permission.,
+            Manifest.permission.ACCESS_FINE_LOCATION,
             Manifest.permission.ACCESS_COARSE_LOCATION
     };
     private void requestLocationPermission() {
@@ -88,6 +95,10 @@ public class MainActivity extends AppCompatActivity {
             // 已经有权限，可以执行蓝牙操作
             doBluetoothOperation();
         }
+    }
+
+    private void doBluetoothOperation() {
+        Log.d(TAG, "doBluetoothOperation: do something");
     }
 
     private void openBluetoothSettings() {
