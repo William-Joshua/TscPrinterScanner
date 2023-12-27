@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">TscPrinterScanner</string>
+    <string name="click_scan">点击扫描</string>
+    <string name="scan_result">扫描结果</string>
+    <string name="tsc_bluetooth">TSC 蓝牙</string>
+    <string name="bluetooth_address">蓝牙地址</string>
+    <string name="history">历史记录</string>
+    <string name="scan_icon">Scan Icon</string>
+    <string name="open_setting">设置</string>
+</resources>
